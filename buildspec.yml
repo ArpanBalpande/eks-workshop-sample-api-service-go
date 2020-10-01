@@ -21,6 +21,9 @@ phases:
       - k3d create
       - sleep 20
       - ./create_secret.sh
+      - kubectl apply -f hello-k8s.yml
+      - sleep 20
+      - ./unit_test.sh
 
   post_build:
     commands:
