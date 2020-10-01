@@ -1,3 +1,4 @@
+#!/bin/sh
 SECRET_NAME=$AWS_REGION-ecr-registry
  TOKEN=`aws ecr get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2`
  echo "ENV variables setup done."
